@@ -1,4 +1,3 @@
-# template for "Guess the number" mini-project
 # input will come from buttons and an input field
 # all output for the game will be printed in the console
 
@@ -66,39 +65,28 @@ def input_guess(guess):
     print("")
     
     if (game_over != True):
-          
         if int(guess) == x:
             winner = True
             print("Correct!")
         else:
             winner = False
-
-
+            
         guesses = guesses - 1
         print("Guess was " + str(guess))
 
         if winner != True:
-            
             print("Number of remaining guesses is " + str(guesses))
-
             if int(guess) > x:
                 print("Lower!")
             else:
                 print("Higher!")
         else:
             new_game()
-        
         if guesses == 0:
             print("The game is over. You lost.")
-            
             game_over = True
             new_game()
      
-
-        
-
-
-    
 
 # create frame
 frame = simplegui.create_frame("Home", 300, 200)
@@ -110,5 +98,3 @@ frame.add_input("Enter number", input_guess, 100)
 
 # call new_game 
 new_game()
-
-# always remember to check your completed program against the grading rubric
